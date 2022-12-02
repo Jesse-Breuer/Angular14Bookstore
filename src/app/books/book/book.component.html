@@ -1,0 +1,13 @@
+<li class="m-10">
+    <div class = "flex h-64 max-w-lg border-solid border border-slate-200 p-10 overflow-auto">
+        <div class="flex-none m-4">
+            <img [src]="book.src" [alt] = "book.name" width="100" />
+        </div>
+        <div class="flex-auto m-4 text-center">
+            <p class = "">{{ book.name | titlecase}} by {{ book.author | titlecase}}</p>
+            <p class = "">{{book.amount | currency}}</p>
+            <button class="bg-amber-300 px-6 py-3 m-4" *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
+            <button class="bg-amber-300 px-6 py-3 m-4" *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
+        </div>
+    </div>
+</li>

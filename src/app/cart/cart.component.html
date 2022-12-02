@@ -1,0 +1,15 @@
+<h1>Your Cart</h1>
+<ng-container *ngIf="getCart().length > 0">
+<div class="flex" *ngFor="let book of getCart();">
+    <div class="flex-none w-60">
+        <p class="my-4 text-2xl">{{ book.name }}</p>
+        <p class="my-4 text-1xl">{{ book.author }}</p>
+    </div>
+    <div class="flex">
+        <p class="my-4 text-2xl">{{ book.amount | currency }}</p>
+    </div>
+</div>
+</ng-container>
+
+<div *ngIf="getCart().length == 0">No Books</div>
+
